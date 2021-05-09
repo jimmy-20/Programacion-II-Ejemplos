@@ -11,10 +11,14 @@ package com.mycompany.main;
  */
 public class NewMain {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        Persona p = new Persona("Jimmy");
+        Celular c = new Celular();
+        
+        p.addPropertyChangeSupport(c);
+        
+        p.setPassword(123);
+        p.setPassword(9876);
+        p.setPassword(1234);
     }
-    
 }
