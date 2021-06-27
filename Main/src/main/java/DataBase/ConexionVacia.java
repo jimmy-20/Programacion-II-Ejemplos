@@ -5,13 +5,13 @@
  */
 package DataBase;
 
-import Interfaces.IConexion;
+import Interfaces.IConexionDB;
 
 /**
  *
  * @author Jimmy-Soza
  */
-public class ConexionVacia implements IConexion{
+public class ConexionVacia implements IConexionDB{
 
     @Override
     public void conectar() {

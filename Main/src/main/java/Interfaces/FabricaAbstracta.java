@@ -9,7 +9,7 @@ package Interfaces;
  *
  * @author Jimmy-Soza
  */
-public interface IConexion {
-    void conectar();
-    void desconectar();
+public interface FabricaAbstracta {
+    IConexionDB getDB(String motor);
+    IConexionRest getRest(String url);
 }

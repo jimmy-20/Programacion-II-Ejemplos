@@ -5,13 +5,13 @@
  */
 package DataBase;
 
-import Interfaces.IConexion;
+import Interfaces.IConexionDB;
 
 /**
  *
  * @author Jimmy-Soza
  */
-public class ConexionMySQL implements IConexion{
+public class ConexionMySQL implements IConexionDB{
     private String host;
     private String puerto;
     private String usuario;

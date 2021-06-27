@@ -8,15 +8,18 @@ package Factory;
 import DataBase.ConexionMySQL;
 import DataBase.ConexionOracle;
 import DataBase.ConexionVacia;
-import Interfaces.IConexion;
+import Interfaces.FabricaAbstracta;
+import Interfaces.IConexionDB;
+import Interfaces.IConexionRest;
 
 /**
  *
  * @author Jimmy-Soza
  */
-public class Fabrica {
-    
-    public static IConexion getConexion(String motor){
+public class FabricaDB implements FabricaAbstracta{
+
+    @Override
+    public IConexionDB getDB(String motor) {
         if (motor == null || motor.isEmpty()){
             return new ConexionVacia();
         }
@@ -29,5 +32,10 @@ public class Fabrica {
                 return new ConexionOracle();
         }
         return new ConexionVacia();
+    }
+
+    @Override
+    public IConexionRest getRest(String url) {
+        return null;
     }
 }

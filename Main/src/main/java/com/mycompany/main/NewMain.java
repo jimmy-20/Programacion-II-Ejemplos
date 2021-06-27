@@ -5,30 +5,32 @@
  */
 package com.mycompany.main;
 
-import Factory.Fabrica;
-import Interfaces.IConexion;
+import Factory.GenerateFactory;
+import Interfaces.FabricaAbstracta;
+import Interfaces.IConexionDB;
+import Interfaces.IConexionRest;
+
 
 /**
  *
  * @author FAMILIASOZAORTIZ
  */
+
 public class NewMain {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        //Fabrica fabrica = new Fabrica();
+    public static void main(String[] args) {        
+        FabricaAbstracta fa = GenerateFactory.getFactory("DB");
         
-        IConexion cx1 = Fabrica.getConexion("Oracle");
-        cx1.conectar();
-        cx1.desconectar();
+        IConexionDB db = fa.getDB("Oracle");
+        db.conectar();
         
-        System.out.println("");
+        FabricaAbstracta fu = GenerateFactory.getFactory("URL");
         
-        IConexion cx2 = Fabrica.getConexion("MySQL");
-        cx2.conectar();
-        cx2.desconectar();
+        IConexionRest rest = fu.getRest("Eva");
+        rest.leerURL("eva.uni.edu.ni");
     }
     
 }

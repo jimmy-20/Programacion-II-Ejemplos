@@ -5,13 +5,13 @@
  */
 package DataBase;
 
-import Interfaces.IConexion;
+import Interfaces.IConexionDB;
 
 /**
  *
  * @author Jimmy-Soza
  */
-public class ConexionOracle implements IConexion{
+public class ConexionOracle implements IConexionDB{
     private String host;
     private String puerto;
     private String usuario;
